@@ -1,0 +1,14 @@
+<h2><%= "+++++++ Create your cocktail !! +++++++" %></h2>
+
+<br>
+
+<%= simple_form_for @cocktail do |f| %>
+
+  <%= f.input :name %>
+  <br>
+  <%= f.submit %>
+
+<% end %>
+
+<p><%= link_to "Back to cocktails", cocktails_path %> ⏎</p>
+
