@@ -3,10 +3,12 @@
 
 <p><%= link_to "Add cocktail", new_cocktail_path %></p>
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li>
-      <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
-    </li>
-  <% end %>
-</ul>
+
+<% @cocktails.each do |cocktail| %>
+  <div class="card-product">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+      <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+    </div>
+  </div>
+<% end %>
