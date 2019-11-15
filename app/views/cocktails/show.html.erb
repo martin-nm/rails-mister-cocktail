@@ -1,18 +1,33 @@
-<h1>+++++++ <%=  @cocktail.name %> +++++++</h1>
-<h2><%= "Recipe" %></h2>
-<br>
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-    <li>
-      <p><%= dose.description %> - <%= dose.ingredient.name %> - <%= link_to "Remove ingredient", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %></p>
-    </li>
-  <% end %>
-</ul>
-<br>
-<h2>Add an ingredient</h2>
+<div class="card-product">
+  <%= image_tag @img_url, alt: "alttext" %>
+  <div class="card-product-infos">
+    <h2><%= @cocktail.name %></h2>
+    <p class="font-italic"><%= @iba %></p>
+  </div>
+</div>
 
-<%= render "doses/new", cocktail: @cocktail, dose: @dose %>
 
-<br>
-<p><%= link_to "Back to cocktails", cocktails_path %> ⏎</p>
 
+<div class="d-flex justify-content-around">
+<!--   <div class="cards">
+ -->    <div class="card-category" style="">
+      <h2><%= "Recipe" %></h2>
+      <br>
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li>
+            <p><%= dose.description %> - <%= dose.ingredient.name %> - <%= link_to "Remove ingredient", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %></p>
+          </li>
+        <% end %>
+      </ul>
+      <br>
+      <p><%= link_to "Back to cocktails", cocktails_path %> ⏎</p>
+    </div>
+
+    <div class="card-category" style="">
+      <h2>Add an ingredient</h2>
+      <%= render "doses/new", cocktail: @cocktail, dose: @dose %>
+      <br>
+    </div>
+  <!-- </div> -->
+</div>
