@@ -8,3 +8,8 @@
 
 Cocktail.create(name: "Moscow Mule")
 Cocktail.create(name: "Caipirinha")
+Ingredient.create(name: "Ice")
+Ingredient.create(name: "Vodka")
+Ingredient.create(name: "Pisco")
+Ingredient.create(name: "Lemon")
+Ingredient.create(name: "Sugar")
